@@ -1,0 +1,1 @@
+FLAG = b'KCTF{cryptography_intro_xD_enjoy_CTF!}'

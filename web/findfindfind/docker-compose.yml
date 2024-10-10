@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+        findfindfind:
+                container_name: findfindfind
+                build:
+                        context: ./
+                        dockerfile: ./Dockerfile
+                ports:
+                        - "8080:80"
+                links:
+                        - find_mysql
+
+        find_mysql:
+                image: mysql:latest
+                container_name: mysql
+                restart: always
+                tty: true
+                volumes: 
+                - ./dump/users.sql:/docker-entrypoint-initdb.d/init.sql
+                environment:
+                        MYSQL_HOST: localhost
+                        MYSQL_DATABASE: user
+                        MYSQL_USER: kctf
+                        MYSQL_PASSWORD: autoset
+                        MYSQL_ROOT_PASSWORD: asldkdslvsdlkcsamlc

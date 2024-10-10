@@ -1,0 +1,13 @@
+service ctf
+{
+    disable     = no
+    flags       = REUSE
+    socket_type = stream
+    protocol    = tcp
+    user        = ctf
+    wait        = no
+    server      = /home/ctf/nc
+    port        = 10019
+}
+
+
